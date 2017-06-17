@@ -17,11 +17,11 @@ const authCheck = jwt({
         rateLimit: true,
         jwksRequestsPerMinute: 5,
         // YOUR-AUTH0-DOMAIN name e.g https://prosper.auth0.com
-        jwksUri: "{YOUR-AUTH0-DOMAIN}/.well-known/jwks.json"
+        jwksUri: "https://santimancini.auth0.com/.well-known/jwks.json"
     }),
     // This is the identifier we set when we created the API
-    audience: '{YOUR-API-AUDIENCE-ATTRIBUTE}',
-    issuer: '{YOUR-AUTH0-DOMAIN}',
+    audience: 'https://labsix.com',
+    issuer: 'https://santimancini.auth0.com',
     algorithms: ['RS256']
 });
 
@@ -55,7 +55,7 @@ app.get('/api/jokes/food', (req, res) => {
   res.json(foodJokes);
 })
 
-app.get('/api/jokes/celebrity', authCheck, (req,res) => {
+app.get('/api/jokes/celebrity', (req,res) => {
   let CelebrityJokes = [
   {
     id: 88881,
