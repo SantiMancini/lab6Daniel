@@ -31,6 +31,11 @@ class Nav extends Component {
              ( isLoggedIn() ) ? <Link to="/editUser">Editar Perfil</Link> :  ''
             }
           </li>
+          <li>
+            {
+             ( isLoggedIn() ) ? <Link to="/addActivity">Agregar Actividad</Link> :  ''
+            }
+          </li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li>

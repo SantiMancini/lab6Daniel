@@ -5,6 +5,7 @@ import FoodJokes from './components/FoodJokes';
 import Callback from './components/Callback';
 import MyActivities from './components/MyActivities';
 import EditUser from './components/EditUser';
+import addActivity from './components/addActivity';
 import { Router, Route, browserHistory } from 'react-router';
 import { requireAuth } from './utils/AuthService';
 import './index.css';
@@ -24,6 +25,7 @@ const Root = () => {
         <Route path="/callback" component={Callback} />
         <Route path="/myActivities" component={MyActivities} />
         <Route path="/editUser" component={EditUser} />
+        <Route path="/addActivity" component={addActivity} />
       </Router>
     </div>
   )
