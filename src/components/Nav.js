@@ -9,22 +9,33 @@ class Nav extends Component {
     return (
       <nav className="navbar navbar-default">
         <div className="navbar-header">
-          <Link className="navbar-brand" to="/">Chuck Norris World</Link>
+          <img className="navbar-left" src={'./logoGYm.ico'} alt="boohoo" height="50" width="50"/>
+          <Link className="navbar-brand" to="/">Gimnasio UM</Link>
         </div>
         <ul className="nav navbar-nav">
           <li>
-            <Link to="/">Food Jokes</Link>
+            <Link to="/">Inicio</Link>
           </li>
           <li>
-            { 
-             ( isLoggedIn() ) ? <Link to="/special">Celebrity Jokes</Link> :  ''
+            {
+             ( isLoggedIn() ) ? <Link to="/calendar">Calendario Actividades</Link> :  ''
+            }
+          </li>
+          <li>
+            {
+             ( isLoggedIn() ) ? <Link to="/myActivities">Mis Actividades</Link> :  ''
+            }
+          </li>
+          <li>
+            {
+             ( isLoggedIn() ) ? <Link to="/editUser">Editar Perfil</Link> :  ''
             }
           </li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li>
-           { 
-             (isLoggedIn()) ? ( <button className="btn btn-danger log" onClick={() => logout()}>Log out </button> ) : ( <button className="btn btn-info log" onClick={() => login()}>Log In</button> )
+           {
+             (isLoggedIn()) ? ( <button id="thisButton" className="btn btn-danger log" onClick={() => logout()}>Log out </button> ) : ( <button id="thisButton" className="btn btn-info log" onClick={() => login()}>Log In</button> )
            }
           </li>
         </ul>
